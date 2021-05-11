@@ -1,0 +1,17 @@
+{
+	"portalAddress": "120.77.239.162:8070",
+	"config_service_Address":"120.77.239.162:8080",
+	"env": "DEV",
+	"appId": "atlas",
+	"clusterName": "atlas-cluster",
+	"namespaceName": "last",
+	"commonId":"testcommon",
+	"commonClusterName":"default",
+	"commmonNamespaceName":"application",
+	"commonEnv":"DEV",
+	"token": "c418c691e45e4f7daec8b6e5e96fd019111b967c",
+	"commonToken":"c418c691e45e4f7daec8b6e5e96fd019111b967c",
+	"redisAddr":"127.0.0.1:6379",
+	"redisPw":"",
+	"addrPort":":8099"
+}

@@ -6,6 +6,8 @@ type Path struct {
 	NameSpace string
 	Key       string
 	Index     uint64 // CAS
+	// 0--精准匹配 1--模糊匹配
+	Match int8
 }
 
 // Client 这里抽象配置中心

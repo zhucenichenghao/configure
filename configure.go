@@ -1,5 +1,7 @@
 package configure
 
+import "strings"
+
 // Path 路径信息
 type Path struct {
 	AppID     string
@@ -7,7 +9,15 @@ type Path struct {
 	Key       string
 	Index     uint64 // CAS
 	// 0--精准匹配 1--模糊匹配
-	Match int8
+	MatchRule int8
+}
+
+// Match 检查是否匹配
+func (p Path) Match(k string) bool {
+	if p.MatchRule == 0 {
+		return p.Key == k
+	}
+	return strings.Contains(p.Key, k)
 }
 
 // Client 这里抽象配置中心

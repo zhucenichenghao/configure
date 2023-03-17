@@ -8,6 +8,8 @@ import (
 	"net/http"
 	"strings"
 	"time"
+
+	"github.com/zhucenichenghao/configure/rlog"
 )
 
 func (c *Client) watchUpdate() {
@@ -73,6 +75,7 @@ func (c *Client) sync(namesapce string) error {
 	defer c.Unlock()
 	releaseKey := c.getReleaseKey(namesapce)
 	url := configURL(c.Conf, namesapce, releaseKey)
+	rlog.Info("apollo sync", map[string]interface{}{"url": url})
 	bts, err := request(c.Cli, url)
 	if err != nil || len(bts) == 0 {
 		return err
